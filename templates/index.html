@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirt Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Add Shirt</h2>
+    <form action="{{ url_for('add_shirt') }}" method="post">
+        <label for="color">Color:</label>
+        <input type="text" name="color" required>
+        <label for="size">Text on Shirt:</label>
+        <input type="text" name="text" required>
+        <button type="submit", name = "AddButton">Add Shirt</button>
+    </form>
+    
+    <h1>Shirts</h1>
+    <table>
+        <tr>
+            <th>Color</th>
+            <th>Text on Shirt</th>
+            <th>Actions</th>
+        </tr>
+        {% for shirt in shirts %}
+            <tr>
+                <td>{{ shirt.color }}</td>
+                <td>{{ shirt.design }}</td>
+                <td>
+                    <form action="{{ url_for('update_shirt', shirt_id=shirt.id) }}" method="post">
+                        <label for="new_color">New Color:</label>
+                        <input type="text" name="new_color" required>
+                        <label for="new_text">New Text on shirt:</label>
+                        <input type="text" name="new_text" required>
+                        <button type="submit", name="UpdateButton">Update</button>
+                    </form>
+                    <form action="{{ url_for('delete_shirt', shirt_id=shirt.id) }}" method="post">
+                        <button type="submit", , name = "DeleteButton">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
