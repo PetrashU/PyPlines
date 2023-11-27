@@ -56,10 +56,3 @@ jobs:
 
       - name: Run tests
         run: python tests/test.py 2>$1 || echo "Failed" >> errors.txt
-
-      - name: Report Bug on Azure
-        if: failure()
-        run: |
-          az devops configure --defaults organization=https://dev.azure.com/{organization}/ project={project}
-          az devops login --organization https://dev.azure.com/{organization}/ --token ${{ secrets.AZURE_TOKEN }}
-          az devops work-item create --type Bug --title "Test Failure" --description "$(cat failure.txt)" --output json
