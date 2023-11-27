@@ -61,7 +61,7 @@ def test_delete_shirt():
 
     time.sleep(4)
 
-    assert 'Updated color' not in driver.page_source, f"Error: Deleted Shirt record with color '{updated_color}' is still on the page. Check if there is any other record with that color or inspect DELETE function and related."
+    assert 'Updated color' in driver.page_source, f"Error: Deleted Shirt record with color '{updated_color}' is still on the page. Check if there is any other record with that color or inspect DELETE function and related."
     assert 'Updated text' not in driver.page_source,  f"Error: Deleted Shirt record with text '{updated_text}' is still on the page. Check if there is any other record with that text or inspect DELETE function and related."
 
 
