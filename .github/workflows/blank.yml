@@ -20,7 +20,6 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.DB_ROOT }}
           MYSQL_DATABASE: ${{ secrets.DB_NAME }}
-          MYSQL_USER: ${{ secrets.DB_USER }}
           MYSQL_PASSWORD: ${{ secrets.DB_PASSWORD }}
         ports:
           - 3306:3306
@@ -42,7 +41,7 @@ jobs:
         run: |
           echo "[DataBase]" > db.ini
           echo "name = ${{ secrets.DB_NAME }}" >> db.ini
-          echo "user = ${{ secrets.DB_USER }}" >> db.ini
+          echo "user = root" >> db.ini
           echo "password = ${{ secrets.DB_PASSWORD }}" >> db.ini
           echo "host = localhost" >> db.ini
           echo "port = 3306"
