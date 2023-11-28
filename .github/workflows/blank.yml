@@ -42,7 +42,7 @@ jobs:
           echo "[DataBase]" > db.ini
           echo "name = ${{ secrets.DB_NAME }}" >> db.ini
           echo "user = root" >> db.ini
-          echo "password = ${{ secrets.DB_PASSWORD }}" >> db.ini
+          echo "pass = ${{ secrets.DB_PASSWORD }}" >> db.ini
           echo "host = localhost" >> db.ini
           echo "port = 3306"
           
