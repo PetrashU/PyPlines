@@ -1,2 +1,2 @@
-#Laboratorium 5
-##Petrashevich Ulyana
+# Laboratorium 5
+## Petrashevich Ulyana
