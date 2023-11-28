@@ -61,4 +61,4 @@ jobs:
         run: |
           az devops configure --defaults organization=https://dev.azure.com/Petrashevich/ project=Test
           echo "${{ secrets.AZURE_TOKEN }}" | az devops login --organization https://dev.azure.com/Petrashevich/
-          az devops work-item create --type Bug --title "Test Failure" --description "$(cat error.txt)" --output json
+          az boards work-item create --type Bug --title "Test Failure" --description "$(cat error.txt)" --output json
