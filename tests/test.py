@@ -2,11 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 import time
 
-options = Options()
-driver = webdriver.Chrome(executable_path="/driver/chromedriver", options=options)
+service = Service(ChromeDriverManager().install())
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=service, options=options)
 
 driver.get('http://localhost:5000/shirts')
 
