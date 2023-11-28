@@ -44,7 +44,7 @@ jobs:
           echo "user = root" >> db.ini
           echo "pass = ${{ secrets.DB_PASSWORD }}" >> db.ini
           echo "host = localhost" >> db.ini
-          echo "port = 3306"
+          echo "port = 3306" >> db.ini
           
 
       - name: Start app
