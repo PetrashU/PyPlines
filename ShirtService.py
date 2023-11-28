@@ -1,5 +1,6 @@
 from Model import Shirt
 
+
 class ShirtService:
     @staticmethod
     def GetAllShirts():
