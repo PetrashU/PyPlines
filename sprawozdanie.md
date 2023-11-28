@@ -21,11 +21,14 @@ Przypomnienie – tak wyglądała moja aplikacja webowa MVC.
 W tym projekcie do plików zostały dodane:
 *	Plik requirements.txt – zawiera wszystkie zainstalowane na maszynie pakiety python, tworzony poprzez komendę „pip freeze > requirements.txt”
 *	Tests/test.py
+
 Plik testowy zawiera instalację drivera za pomocą ChromeDriveManagera i podłączenie się do strony.
  ![test1](https://github.com/PetrashU/PyPlines/assets/102193722/6ad87680-19df-4630-837d-385130f2ea51)
 
 Dalej zaimplementowane metody sprawdzające poprawne działanie. Znajdują odpowiednie pola/przyciski, wypełniają danymi, inicjują działanie i sprawdzają pojawienie się/usunięcie danych ze strony.
+
 Dla komfortu obejrzenia testów dodałam też czekanie kilka sekund po wypełnieniu pól i naciśnięciach przycisków.
+
 W testu na usunięcie rekordu pierwszy assert jest niepoprawny – musi być ‘not in’ zamiast ‘in’. Zrobiłam to z myślą o sprawdzaniu dodania bugu na platformę Azure. 
 ![test2](https://github.com/PetrashU/PyPlines/assets/102193722/91ee1e2e-6eaa-4658-8033-1db6128fc139)
 ![test3](https://github.com/PetrashU/PyPlines/assets/102193722/b1172e44-5147-4a06-8463-3b84dfe9d862)
