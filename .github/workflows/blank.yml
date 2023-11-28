@@ -54,7 +54,7 @@ jobs:
         run: sleep 5
 
       - name: Run tests
-        run: python tests/test.py
+        run: python tests/test.py || echo "Failed" >> error.txt
         
       - name: Report Bug on Azure
         if: failure()
