@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 
-print(f"Chrome version: {webdriver.Chrome(executable_path=ChromeDriverManager().install()).capabilities['browserVersion']}")
+print(f"Chrome version: {webdriver.Chrome(service=Service(executable_path=ChromeDriverManager().install())).capabilities['browserVersion']}")
 print(f"ChromeDriver version: {ChromeDriverManager().install()}")
 
 service = Service(ChromeDriverManager().install())
