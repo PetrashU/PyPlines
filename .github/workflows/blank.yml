@@ -59,6 +59,6 @@ jobs:
       - name: Report Bug on Azure
         if: failure()
         run: |
-          az devops configure --defaults organization=https://dev.azure.com/Petrashevich/ project=Test
+          az devops configure --defaults organization=https://dev.azure.com/Petrashevich/ project=Test1
           echo "${{ secrets.AZURE_TOKEN }}" | az devops login --organization https://dev.azure.com/Petrashevich/
           az boards work-item create --type Bug --title "Test Failure" --description "$(cat error.txt)" --output json
