@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from ShirtService import ShirtService
 import configparser
 
+
 app = Flask(__name__)
 service = ShirtService()
 app.config['DEBUG'] = True
